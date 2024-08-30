@@ -53,8 +53,9 @@
 }
 
 .ui.placeholder.segment {
-  max-height: 100%;
-  width: 60%
+  /* max-height: 80%; */
+  /* width: 70%; */
+  height: 30%;
 }
 
 /* .middle.aligned.row{
@@ -67,6 +68,8 @@
 .ui.grid>.row>.column.lp {
   padding: 20px 40px 20px 20px;
   align-self: flex-start !important;
+  display: flex;
+  justify-content: center;
 }
 
 .ui.grid>.row>.column.rp {
@@ -77,9 +80,10 @@
 
 .ui.grid>.row>.column>img,
 .ui.grid>.row>img {
-  height: 100%;
-  max-width: 50%;
+  max-width: 60%;
   width: auto;
+  height: 450px;
+  /* margin: auto; */
 }
 
 .ui.placeholder .header:not(:first-child):before,
@@ -100,6 +104,15 @@
 .column.rp p {
   font-size: 18px;
   color: #777;
+}
+.text-ellipsis {
+  display: -webkit-box; 
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* Number of lines to display before truncating */
+  overflow: hidden; /* Hide overflowing text */
+  text-overflow: ellipsis;
+  height: 4.5em; /* Control height based on the number of lines */
+  line-height: 1.5em; /* Adjust line height */
 }
 
 .ui.placeholder.segment .column .button,

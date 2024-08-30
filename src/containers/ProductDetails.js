@@ -28,9 +28,9 @@ const ProductDetails = () => {
                 <div>...Loading</div>
             ) : (
                 <div className="ui placeholder segment">
-                    <div className="ui two column stackble center aligned grid">
+                    <div className="ui two column stackble aligned grid"  style={{textAlign:"center"}}>
                         <div className="ui vertical divider">AND</div>
-                        <div className="middle aligned row">
+                        <div className="row">
                             <div className="column lp">
                                 <img className="ui fluid image" src={image} />
                             </div>
@@ -40,7 +40,7 @@ const ProductDetails = () => {
                                     <a className="ui teal tag label">${price}</a>
                                 </h2>
                                 <h3 className="ui brown block header">{category}</h3>
-                                <p>{description}</p>
+                                <p className='text-ellipsis'>{description}</p>
                                 <div className="ui vertical animated button" tabIndex="0">
                                     <div className="hidden content">
                                         <i className="shop icon"></i>

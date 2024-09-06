@@ -62,14 +62,15 @@
   height: 50%;
 } */
 .ui.grid>.row {
-  background: #fff;
+  background: red;
 }
 
 .ui.grid>.row>.column.lp {
   padding: 20px 40px 20px 20px;
-  align-self: flex-start !important;
+  /* align-self: flex-start !important; */
   display: flex;
   justify-content: center;
+  /* align-items: center; */
 }
 
 .ui.grid>.row>.column.rp {
@@ -80,10 +81,10 @@
 
 .ui.grid>.row>.column>img,
 .ui.grid>.row>img {
-  max-width: 60%;
+  max-width: 80%;
   width: auto;
-  height: 450px;
-  /* margin: auto; */
+  height: 80%;
+  margin: auto;
 }
 
 .ui.placeholder .header:not(:first-child):before,
@@ -99,6 +100,7 @@
 
 .column.rp h1 {
   color: #333;
+  font-size: 20px;
 }
 
 .column.rp p {
@@ -108,11 +110,11 @@
 .text-ellipsis {
   display: -webkit-box; 
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3; /* Number of lines to display before truncating */
-  overflow: hidden; /* Hide overflowing text */
+  -webkit-line-clamp: 3; 
+  overflow: hidden; 
   text-overflow: ellipsis;
-  height: 4.5em; /* Control height based on the number of lines */
-  line-height: 1.5em; /* Adjust line height */
+  /* height: 4.5em;  */
+  line-height: 1.5em; 
 }
 
 .ui.placeholder.segment .column .button,

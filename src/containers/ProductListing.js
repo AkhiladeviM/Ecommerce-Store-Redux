@@ -10,7 +10,7 @@ const ProductListing = () => {
     const dispatch = useDispatch();
 
     const fetchProductList = async () => {
-        const response = await axios.get("https://fakestoreapi.com/products").catch((err) => {
+        const response = await axios.get("https://fakestoreapi.in/api/products").catch((err) => {
             console.log("err = ", err);
         });
         dispatch(setProducts(response.data));
@@ -19,7 +19,7 @@ const ProductListing = () => {
         fetchProductList();
     }, [])
     return (
-        <div className='ui grid container'>
+        <div className='ui grid container' style={{overflow:"hidden"}}>
             <ProductComponent />
         </div>
     )

@@ -11,10 +11,11 @@ const ProductDetails = () => {
     const dispatch = useDispatch();
 
     const fetchProductDetails = async () => {
-        const productDetails = await axios.get("https://fakestoreapi.com/products/" + productId).catch(err => {
+        const productDetails = await axios.get("https://fakestoreapi.in/api/products/" + productId).catch(err => {
             console.log(err)
         })
-        dispatch(selectedProducts(productDetails.data));
+        console.log(productDetails.data.product)
+        dispatch(selectedProducts(productDetails.data.product));
     }
     useEffect(() => {
         productId && productId !== null && fetchProductDetails();
@@ -28,7 +29,7 @@ const ProductDetails = () => {
                 <div>...Loading</div>
             ) : (
                 <div className="ui placeholder segment">
-                    <div className="ui two column stackble aligned grid"  style={{textAlign:"center"}}>
+                    <div className="ui two column stackble aligned grid">
                         <div className="ui vertical divider">AND</div>
                         <div className="row">
                             <div className="column lp">

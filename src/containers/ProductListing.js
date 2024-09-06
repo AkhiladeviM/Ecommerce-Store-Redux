@@ -10,10 +10,10 @@ const ProductListing = () => {
     const dispatch = useDispatch();
 
     const fetchProductList = async () => {
-        const response = await axios.get("https://fakestoreapi.com/products").catch((err) => {
+        const response = await axios.get("https://fakestoreapi.in/api/products").catch((err) => {
             console.log("err = ", err);
         });
-        dispatch(setProducts(response.data));
+        dispatch(setProducts(response.data.products));
     }
     useEffect(() => {
         fetchProductList();

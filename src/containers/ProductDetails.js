@@ -11,10 +11,10 @@ const ProductDetails = () => {
     const dispatch = useDispatch();
 
     const fetchProductDetails = async () => {
-        const productDetails = await axios.get("https://fakestoreapi.com/products/" + productId).catch(err => {
+        const productDetails = await axios.get("https://fakestoreapi.in/api/products/" + productId).catch(err => {
             console.log(err)
         })
-        dispatch(selectedProducts(productDetails.data));
+        dispatch(selectedProducts(productDetails.data.product));
     }
     useEffect(() => {
         productId && productId !== null && fetchProductDetails();

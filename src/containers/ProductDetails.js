@@ -23,14 +23,14 @@ const ProductDetails = () => {
         };
     }, []);
     return (
-        <div className="ui grid container">
+        <div className="ui grid container" style={{backgroundColor:"red"}}>
             {Object.keys(product).length === 0 ? (
                 <div>...Loading</div>
             ) : (
-                <div className="ui placeholder segment">
-                    <div className="ui two column stackble aligned grid"  style={{textAlign:"center"}}>
+                <div className="ui placeholder segment" style={{backgroundColor:"yellow"}}>
+                    <div className="ui two column stackble aligned grid"  style={{textAlign:"center"}} >
                         <div className="ui vertical divider">AND</div>
-                        <div className="row">
+                        <div className="productRow" style={{ backgroundColor:"black"}}>
                             <div className="column lp">
                                 <img className="ui fluid image" src={image} />
                             </div>

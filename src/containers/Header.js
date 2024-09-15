@@ -1,51 +1,53 @@
-import React from 'react';
-import styled from "styled-components";
-
-export const NavLink = styled.a`
-  font-weight: 600;
-  cursor: pointer;
-`;
-
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCategories, setProducts,removeProducts } from '../redux/actions/productActions';
+import { capitalize } from '../helper';
 const Header = () => {
-    return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow fixed-top">
-            <div className="container-fluid">
-                <span className="navbar-brand">
-                    <a
-                        href="#about"
-                        style={{
-                            textDecoration: "none",
-                            display: "flex",
-                            alignItems: "center",
-                            color: "white",
-                        }}
-                    >
-                        <i className="fa fa-audio-description fa-2x mr-1" aria-hidden="true"></i>
-                    </a>
-                </span>
-                <button
-                    className="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarNavAltMarkup"
-                    aria-controls="navbarNavAltMarkup"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div className="navbar-nav ml-auto">
-                        <NavLink className="nav-link" href="#about">About</NavLink>
-                        <NavLink className="nav-link" href="#skills">Skills</NavLink>
-                        <NavLink className="nav-link" href="#experience">Experience</NavLink>
-                        <NavLink className="nav-link" href="#projects">Projects</NavLink>
-                        <NavLink className="nav-link" href="#education">Education</NavLink>
-                    </div>
-                </div>
+    const dispatch = useDispatch();
+    useEffect(() => {
+        fetchCategories();
+    }, []);
+
+    const fetchCategories = async () => {
+        const response = await axios.get("https://fakestoreapi.in/api/products/category").catch((err) => {
+            console.log("err = ", err);
+        });
+        dispatch(setCategories(response.data.categories));
+    }
+    const fetchCategoryList = async (category) => {
+        dispatch(removeProducts());
+        const response = await axios.get("https://fakestoreapi.in/api/products/category?type=" + category).catch((err) => {
+            console.log("err = ", err);
+        });
+        dispatch(setProducts(response.data.products));
+    }
+    const fetchProductList = async () => {
+        dispatch(removeProducts());
+        const response = await axios.get("https://fakestoreapi.in/api/products").catch((err) => {
+            console.log("err = ", err);
+        });
+        dispatch(setProducts(response.data.products));
+    }
+
+    const categories = useSelector((state) => state.allProducts.categories);
+    const renderList = categories.map((category, id) => {
+        return (
+            <div className='col-1' key={id} onClick={() => fetchCategoryList(category)}>
+                <div className='categoriesText'>{capitalize(category)}</div>
             </div>
-        </nav>
+        )
+    })
+    return (
+        <div className='container-fluid categoriesContainer'>
+            <div className='row categories'>
+                <div className='col-1' onClick={() => fetchProductList()}>
+                    <div className='categoriesText'>All</div>
+                </div>
+                {renderList}
+            </div>
+        </div>
     )
 }
-
 export default Header

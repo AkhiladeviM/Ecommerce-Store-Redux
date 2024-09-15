@@ -23,53 +23,53 @@ const ProductDetails = () => {
         };
     }, []);
     return (
-        <div className="ui grid container" style={{backgroundColor:"red"}}>
-            {Object.keys(product).length === 0 ? (
-                <div>...Loading</div>
-            ) : (
-                <div className="ui placeholder segment" style={{backgroundColor:"yellow"}}>
-                    <div className="ui two column stackble aligned grid"  style={{textAlign:"center"}} >
-                        <div className="ui vertical divider">AND</div>
-                        <div className="productRow" style={{ backgroundColor:"black"}}>
-                            <div className="column lp">
-                                <img className="ui fluid image" src={image} />
-                            </div>
-                            <div className="column rp">
-                                <h1>{title}</h1>
-                                <h2>
-                                    <a className="ui teal tag label">${price}</a>
-                                </h2>
-                                <h3 className="ui brown block header">{category}</h3>
-                                <p className='text-ellipsis'>{description}</p>
-                                <div className="ui vertical animated button" tabIndex="0">
-                                    <div className="hidden content">
-                                        <i className="shop icon"></i>
-                                    </div>
-                                    <div className="visible content">Add to Cart</div>
-                                </div>
-                            </div>
+        // <div className="container" style={{ marginTop: "4.5rem", backgroundColor:"red" }}>
+        // {/* {Object.keys(product).length === 0 ? (
+        //     <div>...Loading</div>
+        // ) : ( */}
+        <div className="container" style={{ marginTop: "6rem" }}>
+            {/* <div className="ui two column stackble aligned grid" style={{ textAlign: "center" }} > */}
+            {/* <div className="ui vertical divider">AND</div> */}
+            <div className="row" style={{ marginTop: "20px", borderRadius: "5px", border: "1px solid #c6a9af" }}>
+                <div className="col-md-6 lp">
+                    <img className="image" src={image} />
+                </div>
+                <div className="col-md-6 rp">
+                    <h1>{title}</h1>
+                    <h2>
+                        <a className="ui teal tag label">$ {price}</a>
+                    </h2>
+                    <h3 className="ui block header">{category}</h3>
+                    <p className='text-ellipsis' title={description}>{description}</p>
+                    <div className="ui vertical animated button" tabIndex="0">
+                        <div className="hidden content">
+                            <i className="shop icon"></i>
                         </div>
+                        <div className="visible content">Add to Cart</div>
                     </div>
                 </div>
-
-                // <div className='five wide column'>
-                //     <div className='ui link cards'>
-                //         <div className="ui vertical divider">AND</div>
-                //         <div className='card'>
-                //             <div className='image'>
-                //                 <img src={image} alt={title} />
-                //             </div>
-                //             <div className='content'>
-                //                 <div className='header'>{title}</div>
-                //                 <div className='meta price'>$ {price}</div>
-                //                 <div className='meta'>{category}</div>
-                //             </div>
-                //         </div>
-                //     </div>
-                // </div>
-
-            )}
+            </div>
         </div>
+        // </div>
+
+        //         {/* // <div className='five wide column'>
+        //             //     <div className='ui link cards'>
+        //             //         <div className="ui vertical divider">AND</div>
+        //             //         <div className='card'>
+        //             //             <div className='image'>
+        //             //                 <img src={image} alt={title} />
+        //             //             </div>
+        //             //             <div className='content'>
+        //             //                 <div className='header'>{title}</div>
+        //             //                 <div className='meta price'>$ {price}</div>
+        //             //                 <div className='meta'>{category}</div>
+        //             //             </div>
+        //             //         </div>
+        //             //     </div>
+        //             // </div> */}
+
+        // {/* // )} */ }
+        //     // </div>
     )
 }
 

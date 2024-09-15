@@ -6,6 +6,11 @@ export const setProducts = (products) => {
         payload: products,
     }
 }
+export const removeProducts = () => {
+    return {
+        type: actionTypes.REMOVE_PRODUCTS,
+    }
+}
 
 export const selectedProducts = (products) => {
     return {
@@ -17,5 +22,12 @@ export const selectedProducts = (products) => {
 export const removeSelectedProducts = () => {
     return {
         type: actionTypes.REMOVE_SELECTED_PRODUCTS,
+    }
+}
+
+export const setCategories = (categories) => {
+    return {
+        type: actionTypes.SET_CATEGORIES,
+        payload: categories
     }
 }

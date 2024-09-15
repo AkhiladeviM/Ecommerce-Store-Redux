@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import ProductComponent from "./ProductComponent";
 import axios from "axios";
 import { setProducts } from "../redux/actions/productActions";
-
+import Header from './Header';
 const ProductListing = () => {
-    
+
     const products = useSelector((state) => state);
     const dispatch = useDispatch();
 
@@ -19,8 +19,11 @@ const ProductListing = () => {
         fetchProductList();
     }, [])
     return (
-        <div className='ui grid container'>
-            <ProductComponent />
+        <div>
+            <Header />
+            <div className='ui grid container-fluid' style={{ marginTop: "0.01rem", marginBottom: "1rem", marginLeft: "auto" }}>
+                <ProductComponent />
+            </div>
         </div>
     )
 }

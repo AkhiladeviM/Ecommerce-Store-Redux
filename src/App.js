@@ -1,21 +1,40 @@
 import './App.css';
-import Header from './containers/Header';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import styled from 'styled-components';
+import Navbar from './containers/Navbar';
 import ProductListing from './containers/ProductListing';
 import ProductDetails from './containers/ProductDetails';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
+  const Body = styled.div`
+  width:100%;
+  overflow:hidden;
+`;
+
   return (
-    <div className="App">
+    <div>
       <Router>
-        <Header />
-        <Routes>
-          <Route path="/" element={<ProductListing />} />
-          <Route path="/product/:productId" element={<ProductDetails />} />
-          <Route path="*" element={<div>404 Not Found</div>} />
-        </Routes>
+        <Navbar />
+        <Body>
+          <Routes>
+            <Route path="/" element={<ProductListing />} />
+            <Route path="/product/:productId" element={<ProductDetails />} />
+            <Route path="*" element={<div>404 Not Found</div>} />
+          </Routes>
+        </Body>
       </Router>
     </div>
+    // <div className="App">
+    //   <Header />
+    //   <Router>
+
+    //     <Routes>
+    //       <Route path="/" element={<ProductListing />} />
+    //       <Route path="/product/:productId" element={<ProductDetails />} />
+    //       <Route path="*" element={<div>404 Not Found</div>} />
+    //     </Routes>
+    //   </Router>
+    // </div>
   );
 }
 

@@ -34,7 +34,7 @@ const ProductComponent = () => {
     <div className='col-3'>
       {products.slice(startIndex, endIndex).map(product => (
         <Link to={"/product/" + product.id}>
-          <div className='d-flex flex-row' key={product.id} style={{color:"black"}}>
+          <div className='d-flex flex-row' key={product.id} style={{ color: "black" }}>
             <img src={product.image} alt={product.title} style={{ width: "auto", height: "130px" }} />
             <div className='content ml-2 mt-3'>
               <div className='header text-ellipsis-title' title={product.title}>{product.title}</div>
@@ -58,25 +58,25 @@ const ProductComponent = () => {
         <>
           <div className='row'>
             <div className='col-6'>
-              <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style={{}}>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img class="d-block" style={{ height: "250px", width: "100%", borderRadius: "20px" }} src="https://img.freepik.com/free-photo/abstract-autumn-beauty-multi-colored-leaf-vein-pattern-generated-by-ai_188544-9871.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1726272000&semt=ais_hybrid" alt="First slide" />
+              <div id="carouselExampleControls" className="carousel slide" data-ride="carousel" style={{}}>
+                <div className="carousel-inner">
+                  <div className="carousel-item active" style={{ backgroundImage: "linear-gradient(to right, #aa4a08,#aa4a08,#aa4a08, #ca6a13)", borderRadius:"20px" }}>
+                    <img className="d-block borderRadiusLeft" style={{ height: "250px", width: "auto" }} src="https://i.pinimg.com/564x/8f/35/a3/8f35a3d7c1350f0d06f7d33306d67deb.jpg" alt="First slide" />
                   </div>
-                  <div class="carousel-item">
-                    <img class="d-block" style={{ height: "250px", width: "100%", borderRadius: "20px" }} src="https://i0.wp.com/picjumbo.com/wp-content/uploads/autumn-background-with-space-for-text-and-leaves-around-free-image.jpeg?w=600&quality=80" alt="Second slide" />
+                  <div className="carousel-item">
+                    <img className="d-block" style={{ height: "250px", width: "100%", borderRadius: "20px" }} src="https://i.pinimg.com/564x/a2/4a/08/a24a088c250960ba4f466cb3ecd881f6.jpg" alt="Second slide" />
                   </div>
-                  <div class="carousel-item">
-                    <img class="d-block" style={{ height: "250px", width: "100%", borderRadius: "20px" }} src="https://thumbs.wbm.im/pw/small/61ef84facc2454b5ed085cd2576f62f1.jpg" alt="Third slide" />
+                  <div className="carousel-item">
+                    <img className="d-block" style={{ height: "250px", width: "70%", borderRadius: "20px" }} src="https://i.pinimg.com/originals/1e/15/66/1e15663688aea6010e845925611743f7.jpg" alt="Third slide" />
                   </div>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
+                <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                  <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span className="sr-only">Previous</span>
                 </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
+                <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                  <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span className="sr-only">Next</span>
                 </a>
               </div>
             </div>

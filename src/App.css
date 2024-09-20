@@ -70,6 +70,10 @@
 }
 
 /* Product Component */
+.borderRadiusLeft{
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
 .product-grid {
   margin-left: 1rem;
   display: flex;

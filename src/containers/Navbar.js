@@ -1,4 +1,6 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import styled from "styled-components";
 
 export const NavLink = styled.a`
@@ -8,21 +10,20 @@ export const NavLink = styled.a`
 
 
 const Navbar = () => {
+    const cartCount = useSelector(state=>state.allProducts?.ecommerceCart?.length)
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow fixed-top">
             <div className="container-fluid">
                 <span className="navbar-brand">
-                    <a
-                        href="#about"
+                    <Link to="/"
                         style={{
                             textDecoration: "none",
                             display: "flex",
                             alignItems: "center",
                             color: "white",
-                        }}
-                    >
+                        }}>
                         <i className="fa fa-audio-description fa-2x mr-1" aria-hidden="true"></i>
-                    </a>
+                    </Link>
                 </span>
                 <button
                     className="navbar-toggler"
@@ -42,8 +43,13 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav ml-auto">
                         <i className="user icon userAndCartIcon mr-3" ></i>
-                        <i className="shop icon userAndCartIcon" ></i>
-                        <span class="cartItems">15</span>
+                        <Link to="/ecommerceCart">
+                            <i className="shop icon userAndCartIcon"
+                                style={{
+                                    textDecoration: "none"
+                                }}></i>
+                        </Link>
+                        <span class="cartItems">{cartCount || "0"}</span>
                         {/* <NavLink className="nav-link" href="#about">About</NavLink>
                         <NavLink className="nav-link" href="#skills">Skills</NavLink>
                         <NavLink className="nav-link" href="#experience">Experience</NavLink>
@@ -52,7 +58,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-        </nav>
+        </nav >
     )
 }
 

@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux"
 import { useParams } from 'react-router-dom';
-import { selectedProducts, removeSelectedProducts } from '../redux/actions/productActions';
+import { selectedProducts, removeSelectedProducts, addToCart } from '../redux/actions/productActions';
 
 const ProductDetails = () => {
     const { productId } = useParams();
@@ -28,9 +28,10 @@ const ProductDetails = () => {
         //     <div>...Loading</div>
         // ) : ( */}
         <div className="container" style={{ marginTop: "6rem" }}>
+            {console.log("cart = ", useSelector((state) => state.ecommerceCart))}
             {/* <div className="ui two column stackble aligned grid" style={{ textAlign: "center" }} > */}
             {/* <div className="ui vertical divider">AND</div> */}
-            <div className="row" style={{ marginTop: "20px", borderRadius: "5px", border: "1px solid #c6a9af" }}>
+            <div className="row" style={{ marginTop: "20px", borderRadius: "5px", border: "1px solid #cfcfcf" }}>
                 <div className="col-md-6 lp">
                     <img className="image" src={image} />
                 </div>
@@ -41,7 +42,7 @@ const ProductDetails = () => {
                     </h2>
                     <h3 className="ui block header">{category}</h3>
                     <p className='text-ellipsis' title={description}>{description}</p>
-                    <div className="ui vertical animated button" tabIndex="0">
+                    <div className="ui vertical animated button" tabIndex="0" onClick={() => dispatch(addToCart(product))}>
                         <div className="hidden content">
                             <i className="shop icon"></i>
                         </div>

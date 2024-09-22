@@ -62,7 +62,7 @@
 .text-ellipsis-title {
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp:2;
   overflow: hidden;
   text-overflow: ellipsis;
   /* height: 4.5em;  */
@@ -153,9 +153,9 @@
   display: flex !important;
   justify-content: center !important;
   align-items: center;
-  border-width: 0px 2px 0px 0px;
+  border-width: 0px 1px 0px 0px;
   border-style: dashed;
-  border-color: #c6a9af;
+  border-color: #cfcfcf;
 }
 
 .rp {

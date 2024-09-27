@@ -20,6 +20,8 @@ export const productReducer = (state = initialState, { type, payload }) => {
                     payload                          // Append new payload to ecommerceCart
                 ]
             };
+        case actionTypes.UPDATE_CART:
+            return { ...state, ecommerceCart: [...payload] };
         default:
             return state;
     }

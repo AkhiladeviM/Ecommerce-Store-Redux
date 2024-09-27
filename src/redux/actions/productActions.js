@@ -25,6 +25,12 @@ export const addToCart = (product) => {
         payload: product,
     }
 }
+export const updateCart = (productS) => {
+    return {
+        type: actionTypes.UPDATE_CART,
+        payload: productS,
+    }
+}
 
 export const removeSelectedProducts = () => {
     return {

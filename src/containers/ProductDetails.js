@@ -27,8 +27,7 @@ const ProductDetails = () => {
         // {/* {Object.keys(product).length === 0 ? (
         //     <div>...Loading</div>
         // ) : ( */}
-        <div className="container" style={{ marginTop: "6rem" }}>
-            {console.log("cart = ", useSelector((state) => state.ecommerceCart))}
+        <div className="container" style={{ marginTop: "5rem",background:"white" }}>
             {/* <div className="ui two column stackble aligned grid" style={{ textAlign: "center" }} > */}
             {/* <div className="ui vertical divider">AND</div> */}
             <div className="row" style={{ marginTop: "20px", borderRadius: "5px", border: "1px solid #cfcfcf" }}>

@@ -1,6 +1,7 @@
 import './App.css';
 import styled from 'styled-components';
 import Navbar from './containers/Navbar';
+import { Toaster } from "react-hot-toast";
 import ProductListing from './containers/ProductListing';
 import ProductDetails from './containers/ProductDetails';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -25,19 +26,20 @@ function App() {
             <Route path="*" element={<div>404 Not Found</div>} />
           </Routes>
         </Body>
+        <Toaster
+          position="top-right"
+          reverseOrder={false}
+          toastOptions={{
+            style: {
+              border: "1px solid #4ac1bd",
+              padding: "16px",
+              color: "#4ac1bd",
+            },
+            iconTheme: { primary: "#4ac1bd", secondary: "#FFFAEE" },
+          }}
+        />
       </Router>
     </div>
-    // <div className="App">
-    //   <Header />
-    //   <Router>
-
-    //     <Routes>
-    //       <Route path="/" element={<ProductListing />} />
-    //       <Route path="/product/:productId" element={<ProductDetails />} />
-    //       <Route path="*" element={<div>404 Not Found</div>} />
-    //     </Routes>
-    //   </Router>
-    // </div>
   );
 }
 

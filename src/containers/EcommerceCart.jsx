@@ -59,7 +59,7 @@ const EcommerceCart = () => {
     return (
         <div className="container" style={{ marginTop: "4.5rem" }}>
             <div className="row">
-                <div className="col-8 mt-5 p-3" style={{ backgroundColor: "white" }}>
+                <div className="col-8 mt-5 p-3 rounded" style={{ backgroundColor: "white" }}>
                     <h5>CART ITEMS</h5>
                     <hr class="solid"></hr>
                     {cartItems.length > 0 ? cartItems.map(data => (
@@ -71,13 +71,13 @@ const EcommerceCart = () => {
                                         <div className='d-flex flex-row justify-content-between'>
                                             <div className='header text-ellipsis-title w-75' title={data.title}>{data.title}</div>
                                             <div className='ml-auto mr-3 meta price'>$ {data.price}</div>
-                                            <i className="fa fa-trash text-danger" aria-hidden="true" style={{ marginTop: "0px", fontSize: "20px" }} onClick={() => { removeProduct(data.id) }}></i>
+                                            <i className="fa fa-trash text-danger cursorPointer" aria-hidden="true" style={{ marginTop: "0px", fontSize: "20px" }} onClick={() => { removeProduct(data.id) }}></i>
                                         </div>
                                         <div className="mt-auto d-flex">
                                             <span style={{ border: "1px solid #333", padding: "6px", borderRadius: "5px" }}>
-                                                <i className="fa fa-minus ml-2 mr-2" aria-hidden="true" onClick={() => productUpdate(data.id, "minus")}></i>
+                                                <i className="fa fa-minus ml-2 mr-2 cursorPointer" aria-hidden="true" onClick={() => productUpdate(data.id, "minus")}></i>
                                                 {data?.quantity || 1}
-                                                <i className="fa fa-plus mr-2 ml-2" aria-hidden="true" onClick={() => productUpdate(data.id, "plus")}></i>
+                                                <i className="fa fa-plus mr-2 ml-2 cursorPointer" aria-hidden="true" onClick={() => productUpdate(data.id, "plus")}></i>
                                             </span>
                                             <div className='ml-3 mt-2 meta price'>$ {data.price * (data?.quantity || 1)}</div>
                                         </div>
@@ -97,8 +97,8 @@ const EcommerceCart = () => {
                     }
 
                 </div>
-                <div className="col-4 mt-5">
-                    <div className='col-12 p-3' style={{ color: "black", backgroundColor: "white" }}>
+                <div className="col-4 mt-5 ">
+                    <div className='col-12 p-3 rounded' style={{ color: "black", backgroundColor: "white" }}>
                         <h5>PRICE DETAILS</h5>
                         <hr class="solid"></hr>
                         <div className='p-3'>

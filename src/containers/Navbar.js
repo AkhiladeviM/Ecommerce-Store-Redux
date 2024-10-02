@@ -12,7 +12,7 @@ export const NavLink = styled.a`
 const Navbar = () => {
     const cartCount = useSelector(state=>state.allProducts?.ecommerceCart?.length)
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow fixed-top">
+        <nav className="navbar navbar-expand-sm navbar-dark bg-dark shadow fixed-top">
             <div className="container-fluid">
                 <span className="navbar-brand">
                     <Link to="/"

@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setCategories, setProducts,removeProducts } from '../redux/actions/productActions';
+import { setCategories, setProducts,removeProducts,setTab } from '../redux/actions/productActions';
 import { capitalize } from '../helper';
 const Header = () => {
     const dispatch = useDispatch();
@@ -21,6 +21,7 @@ const Header = () => {
         const response = await axios.get("https://fakestoreapi.in/api/products/category?type=" + category).catch((err) => {
             console.log("err = ", err);
         });
+        dispatch(setTab(category));
         dispatch(setProducts(response.data.products));
     }
     const fetchProductList = async () => {

@@ -11,7 +11,7 @@ const ProductDetails = () => {
     const product = useSelector((state) => state.product);
     const { image, title, price, category, description } = product;
     const dispatch = useDispatch();
-    const [isDisbaled, setIsDisabled] = useState[false];
+    const [isDisbaled, setIsDisabled] = useState(false)
 
     const fetchProductDetails = async () => {
         const productDetails = await axios.get("https://fakestoreapi.in/api/products/" + productId).catch(err => {

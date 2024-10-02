@@ -7,12 +7,21 @@ import Header from './Header';
 const ProductListing = () => {
 
     const products = useSelector((state) => state);
+    const tab = useSelector((state) => state.allProducts.tab)
     const dispatch = useDispatch();
 
     const fetchProductList = async () => {
-        const response = await axios.get("https://fakestoreapi.in/api/products").catch((err) => {
-            console.log("err = ", err);
-        });
+        let response = [];
+        if (tab === "All") {
+            response = await axios.get("https://fakestoreapi.in/api/products").catch((err) => {
+                console.log("err = ", err);
+            })
+        } else {
+            response = await axios.get("https://fakestoreapi.in/api/products/category?type=" + tab).catch((err) => {
+                console.log("err = ", err);
+            });
+        }
+
         dispatch(setProducts(response.data.products));
     }
     useEffect(() => {

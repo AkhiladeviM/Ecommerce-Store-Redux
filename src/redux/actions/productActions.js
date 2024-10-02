@@ -6,6 +6,14 @@ export const setProducts = (products) => {
         payload: products,
     }
 }
+
+export const setTab = (tab) => {
+    return {
+        type: actionTypes.SET_TAB,
+        payload: tab,
+    }
+}
+
 export const removeProducts = () => {
     return {
         type: actionTypes.REMOVE_PRODUCTS,
@@ -27,7 +35,7 @@ export const addToCart = (product) => {
 }
 export const updateCart = (productS) => {
     return {
-        type: actionTypes.UPDATE_CART,
+        type: actionTypes.UPDATE_CART_ITEMS,
         payload: productS,
     }
 }

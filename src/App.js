@@ -9,6 +9,7 @@ import EcommerceCart from './containers/EcommerceCart';
 
 function App() {
   const Body = styled.div`
+  max-width:100vw;
   width:100%;
   height:100%
   overflow:hidden;
